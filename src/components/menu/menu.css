@@ -1,0 +1,92 @@
+.menu-bar,
+.menu-overlay-bar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2em;
+  z-index: 1;
+}
+
+.menu-bar a,
+.menu-open p {
+  color: black;
+  cursor: pointer;
+}
+
+.menu-close p {
+  color: black;
+  cursor: pointer;
+}
+
+.menu-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+  background-color: #c5fb45;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.menu-close-icon {
+  display: flex;
+  flex: 2;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.menu-copy {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2em;
+}
+
+.menu-preview {
+  display: flex;
+  flex: 4;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.menu-close-icon p {
+  font-size: 100px;
+  -webkit-text-stroke: 3px #c5fb45;
+  line-height: 0.7;
+}
+
+.menu-link-item {
+  width: max-content;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menu-link-item-holder {
+  position: relative;
+}
+
+.menu-link-item-holder a {
+  color: black;
+  font-size: 80px;
+  font-weight: 400;
+  letter-spacing: .02em;
+  line-height: .85;
+}
+
+.menu-info {
+  display: flex;
+}
+
+.menu-info-col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+}
