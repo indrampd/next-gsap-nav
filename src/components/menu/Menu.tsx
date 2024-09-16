@@ -91,7 +91,7 @@ export default function Menu() {
 						<p>Close</p>
 					</div>
 				</div>
-				<div className="menu-close-icon">
+				<div className="menu-close-icon" onClick={toggleMenu}>
 					<p>&#x2715;</p>
 				</div>
 				<div className="menu-copy">
