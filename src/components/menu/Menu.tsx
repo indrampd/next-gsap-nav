@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import "./menu.css";
+import SplitType from "split-type";
 
 // Define the structure for the links
 interface MenuLink {
@@ -36,7 +37,10 @@ export default function Menu() {
 
 	useGSAP(
 		() => {
-			gsap.set(".menu-link-item-holder", { y: 75 });
+			const split = new SplitType(".menu-link-item-holder", {
+				types: "lines,chars",
+			});
+			gsap.set(split.chars, { y: 75 });
 
 			tl.current = gsap
 				.timeline({ paused: true })
@@ -45,13 +49,17 @@ export default function Menu() {
 					clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
 					ease: "power4.inOut",
 				})
-				.to(".menu-link-item-holder", {
+				.to(split.chars, {
 					duration: 1,
 					y: 0,
-					stagger: 0.1,
+					stagger: 0.025,
 					ease: "power4.out",
 					delay: -0.75,
 				});
+
+			return () => {
+				split.revert();
+			};
 		},
 		{ scope: container }
 	);
